@@ -1,5 +1,12 @@
 import React, { useState, useRef } from "react";
 import { motion } from "framer-motion";
+import textalign from "../assets/textalign.svg";
+import arrowup from "../assets/arrow-up.svg";
+import arrowdown from "../assets/arrow-down.svg";
+import copy from "../assets/copy.svg";
+import note from "../assets/note.svg";
+
+
 
 const ResultsPage = () => {
 
@@ -181,7 +188,7 @@ const ResultsPage = () => {
       {/* Detailed Correction */}
       <div ref={correctionRef} className="mt-16 w-full max-w-7xl flex flex-col">
       <div className="flex gap-4 items-center mb-10">
-        <img src="/defs/assets/textalign.svg" alt="textalign-left" className="w-5 h-5 ml-2" />
+        <img src={textalign} alt="textalign-left" className="w-5 h-5 ml-2" />
         <h2 className="text-2xl font-medium ">Detailed Correction</h2>
       </div>
 
@@ -205,7 +212,7 @@ const ResultsPage = () => {
                   <p className={`text-xl ${key === "GRA" ? "text-red-500" : key === "STR" ? "text-yellow-500" : "text-blue-500"}`}>
                     {label}
                   </p>
-                  <img src={openSection === key ? "/defs/assets/arrow-up.svg" : "/defs/assets/arrow-down.svg"} alt="toggle" className="w-5 h-5" />
+                  <img src={openSection === key ? arrowup : arrowdown} alt="toggle" className="w-5 h-5" />
                 </div>
 
                 <motion.div
@@ -256,7 +263,7 @@ const ResultsPage = () => {
         <button 
             onClick={copyToClipboard} 
             className="flex gap-3 items-center justify-center mt-4 p-4 bg-green-500 rounded-lg hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-gray-500">
-            <img src="/defs/assets/copy.svg" alt="copy" className="w-6 h-6"/>
+            <img src={copy} alt="copy" className="w-6 h-6"/>
             Copy Text
           </button>
         </div>
@@ -276,7 +283,7 @@ const ResultsPage = () => {
         onClick={() => window.location.href = "/"} 
         className="flex items-center justify-center text-base w-full max-w-7xl my-12 p-6 bg-customBlue text-white text-larg font-extrabold rounded-lg hover:bg-blue-800 transition delay-90 focus:outline-none focus:ring-2 focus:ring-blue-300">
         Check Another Essay
-        <img src="/defs/assets/note.svg" alt="note" className="w-7 h-7 ml-2 " />
+        <img src={note} alt="note" className="w-7 h-7 ml-2 " />
       </button>
 
 

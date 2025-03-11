@@ -1,4 +1,6 @@
 import React from 'react';
+import logo from "../assets/logo.svg";
+
 
 
 const Navbar = () => {
@@ -6,7 +8,7 @@ const Navbar = () => {
     <nav className="flex justify-center">
         <div className="w-full max-w-7xl px-4 py-4 flex items-center justify-between">
       <div className="flex items-center space-x-3">
-        <img src="/defs/assets/logo.svg" alt="Logo" className="w-11 h-11" /> 
+        <img src={logo} alt="Logo" className="w-11 h-11" /> 
         <div>
           <h1 onClick={() => window.location.href = "/"} className="cursor-pointer text-xl md:text-2xl font-extrabold text-customBlue">
             BandBooster

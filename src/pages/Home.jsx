@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import star from "../assets/star.svg";
 
 const HomePage = () => {
   const [topic, setTopic] = useState('');
@@ -49,7 +50,7 @@ const HomePage = () => {
             onClick={handleSubmit}
             className="w-full flex items-center justify-center bg-customBlue text-white text-base font-medium p-5 rounded-lg shadow-md hover:bg-blue-800 transition delay-90">
             Check My Essay
-            <img src="/defs/assets/star.svg" alt="star" className="w-5 h-5 ml-2 " />
+            <img src={star} alt="star" className="w-5 h-5 ml-2 " />
           </button>
         </div>
       </div>
