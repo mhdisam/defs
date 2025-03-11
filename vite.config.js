@@ -8,6 +8,9 @@ export default defineConfig({
     outDir: "dist",
     assetsDir: "assets",
   },
+  define: {
+    API_BASE_URL: JSON.stringify('https://bandbooster.liara.run') // اضافه کردن متغیر محیطی
+  },
   server: {
     proxy: {
       '/api': {

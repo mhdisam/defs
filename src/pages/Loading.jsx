@@ -27,7 +27,7 @@ const LoadingPage = () => {
           body: requestBody
         };
 
-        const formatRes = await fetch(`/api/format-errors`, fetchOptions);
+        const formatRes = await fetch(`${import.meta.env.API_BASE_URL}/format-errors`, fetchOptions);
         if (!formatRes.ok) throw new Error("Failed to fetch format errors.");
         const formatData = await formatRes.json();
         localStorage.setItem("formatErrors", JSON.stringify(formatData));
@@ -44,9 +44,9 @@ const LoadingPage = () => {
         };
 
         const [scoreRes, feedbackRes, revisedRes] = await Promise.all([
-          fetch(`/api/score`, fetchOptions),
-          fetch(`/api/feedback`, updatedFetchOptions), 
-          fetch(`/api/revised-writing`, fetchOptions)
+          fetch(`${import.meta.env.API_BASE_URL}/score`, fetchOptions),
+          fetch(`${import.meta.env.API_BASE_URL}/feedback`, updatedFetchOptions),  
+          fetch(`${import.meta.env.API_BASE_URL}/revised-writing`, fetchOptions)
         ]);
 
         if (!scoreRes.ok || !feedbackRes.ok || !revisedRes.ok) {
