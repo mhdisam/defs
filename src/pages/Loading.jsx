@@ -2,10 +2,13 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Loader from '../components/Loader';
 
+const API_BASE_URL = "https://bandbooster.liara.run";
+
 const LoadingPage = () => {
   const navigate = useNavigate();
   const [loading, setLoading] = useState(true);
 
+  
   useEffect(() => {
     const fetchResults = async () => {
       try {
@@ -27,7 +30,7 @@ const LoadingPage = () => {
           body: requestBody
         };
 
-        const formatRes = await fetch(`/api/format-errors`, fetchOptions);
+        const formatRes = await fetch(`${API_BASE_URL}/format-errors`, fetchOptions);
         if (!formatRes.ok) throw new Error("Failed to fetch format errors.");
         const formatData = await formatRes.json();
         localStorage.setItem("formatErrors", JSON.stringify(formatData));
@@ -44,9 +47,9 @@ const LoadingPage = () => {
         };
 
         const [scoreRes, feedbackRes, revisedRes] = await Promise.all([
-          fetch(`/api/score`, fetchOptions),
-          fetch(`/api/feedback`, updatedFetchOptions), 
-          fetch(`/api/revised-writing`, fetchOptions)
+          fetch(`${API_BASE_URL}/score`, fetchOptions),
+          fetch(`${API_BASE_URL}/feedback`, updatedFetchOptions), 
+          fetch(`${API_BASE_URL}/revised-writing`, fetchOptions)
         ]);
 
         if (!scoreRes.ok || !feedbackRes.ok || !revisedRes.ok) {

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import star from "../assets/star.svg";
+import star from "../../public/assets/star.svg";
 
 const HomePage = () => {
   const [topic, setTopic] = useState('');

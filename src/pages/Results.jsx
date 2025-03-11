@@ -1,10 +1,10 @@
 import React, { useState, useRef } from "react";
 import { motion } from "framer-motion";
-import textalign from "../assets/textalign.svg";
-import arrowup from "../assets/arrow-up.svg";
-import arrowdown from "../assets/arrow-down.svg";
-import copy from "../assets/copy.svg";
-import note from "../assets/note.svg";
+import textalign from "../../public/assets/textalign.svg";
+import arrowup from "../../public/assets/arrow-up.svg";
+import arrowdown from "../../public/assets/arrow-down.svg";
+import copy from "../../public/assets/copy.svg";
+import note from "../../public/assets/note.svg";
 
 
 

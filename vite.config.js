@@ -3,19 +3,18 @@ import react from '@vitejs/plugin-react';
 
 export default defineConfig({
   plugins: [react()],
-  base: "/defs/",
+  base: "/",
   build: {
-    outDir: "dist",
-    assetsDir: "assets",
+    outDir: "build"
   },
-  server: {
-    proxy: {
-      '/api': {
-        target: 'https://bandbooster.liara.run',
-        changeOrigin: true,
-        secure: false,
-        rewrite: (path) => path.replace(/^\/api/, ''),
-      },
-    },
-  },
+  // server: {
+  //   proxy: {
+  //     '/api': {
+  //       target: 'https://bandbooster.liara.run',
+  //       changeOrigin: true,
+  //       secure: false,
+  //       rewrite: (path) => path.replace(/^\/api/, ''),
+  //     },
+  //   },
+  // },
 });

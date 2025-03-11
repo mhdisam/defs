@@ -1,0 +1,7 @@
+{
+  "platform": "react",
+  "app": "bandbooster-front",
+  "build": {
+    "location": "iran"
+  }
+}
