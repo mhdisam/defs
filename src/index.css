@@ -1,0 +1,115 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100..900&display=swap');
+
+::-webkit-scrollbar {
+  display: none;
+}
+* {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: #F5F5F5;
+}
+
+
+ul li {
+  list-style: none;
+  position: relative;
+  padding-left: 24px;
+}
+
+ul li::before {
+  content: "";
+  background: url("./assets/list.svg") no-repeat center center;
+  background-size: contain;
+  width: 16px;
+  height: 16px;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.boxw {
+  min-width: 360px;
+}
+
+.grammar {
+  color: red;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.structural {
+  color: orange;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.vocabulary {
+  color: blue;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.loader {
+  width: 12em;
+  height: 3em;
+  position: relative;
+  overflow: hidden;
+  border-bottom: 8px solid #000;
+  filter: url(#goo);
+}
+
+.loader::before {
+  content: '';
+  width: 22em;
+  height: 18em;
+  background: #f00;
+  position: absolute;
+  border-radius: 50%;
+  left: -2em;
+  bottom: -18em;
+  animation: wee1 2s linear infinite;
+}
+
+.loader::after {
+  content: '';
+  width: 16em;
+  height: 12em;
+  background: #0ff;
+  position: absolute;
+  border-radius: 50%;
+  left: -4em;
+  bottom: -12em;
+  animation: wee2 2s linear infinite 0.75s;
+}
+
+@keyframes wee1 {
+  0% {
+    transform: translateX(-10em) rotate(0deg);
+  }
+
+  100% {
+    transform: translateX(7em) rotate(180deg);
+  }
+}
+
+@keyframes wee2 {
+  0% {
+    transform: translateX(-8em) rotate(0deg);
+  }
+
+  100% {
+    transform: translateX(8em) rotate(180deg);
+  }
+}
