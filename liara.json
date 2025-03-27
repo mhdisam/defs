@@ -1,6 +1,6 @@
 {
   "platform": "react",
-  "app": "bandbooster-front",
+  "app": "bandbooster",
   "build": {
     "location": "iran"
   }
