@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Loader from '../components/Loader';
 
-const API_BASE_URL = "https://bandbooster.liara.run";
+const API_BASE_URL = "https://api-bandbooster.liara.run";
 
 const LoadingPage = () => {
   const navigate = useNavigate();
